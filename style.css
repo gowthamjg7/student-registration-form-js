@@ -1,0 +1,470 @@
+
+/* GLOBAL RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* PAGE BACKGROUND */
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    min-height: 100vh;
+    padding: 40px 20px;
+
+    background: linear-gradient(
+        to bottom,
+        #e9e5ff 0%,
+        #e9e5ff 45%,
+        #7661d8 45%,
+        #7661d8 100%
+    );
+
+    position: relative;
+    isolation: isolate;
+}
+
+
+/* MAIN FORM CONTAINER */
+
+.container {
+    position: relative;
+    z-index: 1;
+
+    max-width: 950px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 40px;
+
+    background: #fff;
+    border-radius: 16px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* MAIN HEADING */
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #422f99;
+    margin-bottom: 40px;
+}
+
+
+/* FORM LAYOUT */
+
+#student_form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+
+/* INDIVIDUAL FORM GROUPS */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1 1 calc(50% - 11px);
+    min-width: 250px;
+}
+
+
+/* FORM LABELS */
+
+.form-group > label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 9px;
+    color: #45405e;
+}
+
+
+/* INPUT FIELDS  */
+
+.form-group input:not([type="radio"]),
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+
+    border: 1px solid #e1e0eb;
+    border-radius: 7px;
+
+    background: #f8f7fc;
+    font-size: 14px;
+
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+
+/* INPUT FOCUS EFFECT*/
+
+.form-group input:not([type="radio"]):focus,
+.form-group textarea:focus {
+    border: 1px solid #7661d8;
+    background: #fff;
+
+    box-shadow: 0 0 0 3px rgba(118, 97, 216, 0.12);
+
+    outline: none;
+}
+
+
+/* ADDRESS TEXTAREA */
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+
+/* GENDER OPTIONS */
+
+.gender-options {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    min-height: 42px;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+
+    transition: background 0.2s ease;
+}
+
+.gender-options label:hover {
+    background: #f1effb;
+}
+
+.gender-options input[type="radio"] {
+    accent-color: #7661d8;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+
+/* SUBMIT BUTTON CONTAINER */
+
+#student_form .form-group:has(button) {
+    flex-basis: 100%;
+    align-items: flex-end;
+}
+
+
+/* SUBMIT BUTTON */
+
+#submit {
+    background: #7661d8;
+    color: #fff;
+
+    border: none;
+    padding: 13px 30px;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    box-shadow: 0 4px 10px rgba(118, 97, 216, 0.2);
+}
+
+#submit:hover {
+    background: #5d48bd;
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 14px rgba(118, 97, 216, 0.3);
+}
+
+#submit:active {
+    transform: translateY(0);
+}
+
+
+/* TABLE CONTAINER */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+
+/* STUDENT TABLE */
+
+table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    font-size: 13px;
+    border: 1px solid #dcd7ed;
+}
+
+th {
+    background: #6550c4;
+    color: #fff;
+    padding: 16px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    border: 1px solid #8877d6;
+}
+
+td {
+    padding: 15px 14px;
+    color: #48445a;
+    border: 1px solid #e1ddec;
+}
+
+tbody tr:nth-child(even) {
+    background: #f7f6fc;
+}
+
+tbody tr:hover {
+    background: #eeebfc;
+    transition: background 0.2s ease;
+}
+
+
+/* DECORATIVE GRADIENT CIRCLES */
+
+body::before,
+body::after,
+.decoration {
+    position: fixed;
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Top floating circle */
+
+body::before {
+    content: "";
+
+    width: 180px;
+    height: 180px;
+    
+    top: 20px;
+    left: 45%;
+
+    background: linear-gradient(
+        135deg,
+        #c7b9ff,
+        #8063e8
+    );
+
+    opacity: 0.65;
+}
+
+/* Bottom-right floating circle */
+
+body::after {
+    content: "";
+
+    width: 150px;
+    height: 150px;
+
+    bottom: 25px;
+    right: 8%;
+
+    background: linear-gradient(
+        135deg,
+        #e2d9ff,
+        #9274ed
+    );
+
+    opacity: 0.8;
+}
+
+/* Left circle */
+
+.circle-left {
+    width: 110px;
+    height: 110px;
+    left: -35px;
+    top: 35%;
+
+    background: linear-gradient(
+        135deg,
+        #a995ff,
+        #684bd0
+    );
+}
+
+/* Right circle */
+
+.circle-right {
+    width: 130px;
+    height: 130px;
+
+    right: -45px;
+    top: 40%;
+    background: linear-gradient(
+        135deg,
+        #d9ccff,
+        #8b6ce9
+    );
+}
+
+
+/* VECTOR ILLUSTRATIONS */
+
+.vector {
+    position: absolute;
+
+    width: 260px;
+    height: auto;
+
+    object-fit: contain;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Standing student - bottom left */
+
+.vector-left {
+    left: 10px;
+    bottom: 10px;
+}
+
+/* Student sitting on books - top right */
+
+.vector-right {
+    right: 10px;
+    top: 40px;
+}
+
+
+/*  TABLET RESPONSIVENESS  */
+
+@media (max-width: 900px) {
+
+    .container {
+        padding: 30px;
+    }
+
+    .vector {
+        width: 170px;
+    }
+
+    .vector-left {
+        left: 0;
+        bottom: 0;
+    }
+
+    .vector-right {
+        right: 0;
+        top: 10px;
+    }
+
+}
+
+
+
+   /* MOBILE RESPONSIVENESS */
+ 
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 22px 16px;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 23px;
+        margin-bottom: 25px;
+    }
+
+    #student_form {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .form-group {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #student_form .form-group:has(button) {
+        align-items: stretch;
+    }
+
+    #submit {
+        width: 100%;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    /* Keep illustrations visible, but smaller */
+
+    .vector {
+        width: 110px;
+        opacity: 0.8;
+    }
+
+    .vector-left {
+        left: 0;
+        bottom: 0;
+    }
+
+    .vector-right {
+        right: 0;
+        top: 0;
+    }
+
+    /* Smaller decorative circles */
+
+    body::before {
+        width: 100px;
+        height: 100px;
+    }
+
+    body::after {
+        width: 90px;
+        height: 90px;
+    }
+
+    .circle-left {
+        width: 70px;
+        height: 70px;
+    }
+
+    .circle-right {
+        width: 80px;
+        height: 80px;
+    }
+
+}

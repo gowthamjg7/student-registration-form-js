@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <div class="decoration circle-left"></div>
+    <div class="decoration circle-right"></div>
+    <img src = "./img1.png" class ="vector vector-left" alt ="student with pen">
+    <img src = "./img2.png" class ="vector vector-right" alt ="student with laptop">
+    <div class="container">
+    <h1>Student Form</h1>
+    <form action="" id="student_form">
+
+    <div class="form-group">
+    <label for ="first_name">First Name :</label>
+    <input type ="text" placeholder ="Enter First Name" id="first_name" name="firstName" required>
+    </div>
+
+    <div class="form-group">
+    <label for ="last_name">Last Name :</label>
+    <input type ="text" placeholder ="Enter Last Name" id="last_name" name="lastName" required>
+    </div>
+
+    <div class="form-group">
+    <label for="email_id">Email :</label>
+    <input type ="email" placeholder ="Enter Email" id="email_id" name="email" required>
+    </div>
+
+    <div class="form-group">
+    <label for="address">Address :</label>
+    <textarea placeholder ="Enter Address" id="address" name="Address" required></textarea>
+    </div>
+
+    <div class="form-group">
+    <label for="pincode">Pincode :</label>
+    <input type ="text" placeholder ="Enter Pin code" id="pincode" name="Pincode" required>
+    </div>
+
+    <div class="form-group">
+        <label>Gender:</label>
+
+        <div class="gender-options">
+            <label>
+                <input type="radio" name="gender" value="Male" required>
+            Male
+            </label>
+
+            <label>
+                <input type="radio" name="gender" value="Female">
+                    Female
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+    <label for ="state">State :</label>
+    <input type ="text" placeholder ="Enter State" id="state" name="State" required>
+    </div>
+
+    <div class="form-group">
+    <label for ="country">Country :</label>
+    <input type ="text" placeholder ="Enter Country" id="country" name="Country" required>
+    </div>
+
+    <div class="form-group">
+    <button type="submit" id="submit">Submit</button><br><br>
+    </div>
+
+    </form>
+    <div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Pincode</th>
+                <th>State</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody">
+            
+
+        </tbody>
+    </table>
+    </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
